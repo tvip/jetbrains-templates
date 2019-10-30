@@ -1,0 +1,68 @@
+<templateSet group="tvip">
+  <template name="bvclass" value="abstract class $CLASS_NAME$ implements $PARENT_CLASS_NAME$, Built&lt;$CLASS_NAME$, $CLASS_NAME$Builder&gt; {&#10;    &#10;  $CLASS_NAME$._();&#10;  factory $CLASS_NAME$([void Function($CLASS_NAME$Builder) updates]) = _$$$CLASS_NAME$;&#10;  static Serializer&lt;$CLASS_NAME$&gt; get serializer =&gt; _$$$CLASS_NAME_DECAPITILIZED$Serializer;&#10;}" description="Dart: generate build_value class" toReformat="false" toShortenFQNames="false">
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARENT_CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME_DECAPITILIZED" expression="" defaultValue="decapitalize(CLASS_NAME)" alwaysStopAt="false" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="handlEvent" value="else if (event is $EVENT$) {&#10;    yield* _handle$EVENT$(event);&#10;}&#10;" description="Dart: Make logic branch for handle event in bloc" toReformat="false" toShortenFQNames="false">
+    <variable name="EVENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+    </context>
+  </template>
+  <template name="handlMethod" value="Stream&lt;$STATE$&gt; _handle$METHOD$($EVENT$ event) async* {}" description="Dart: Make handleEvent method for bloc" toReformat="false" toShortenFQNames="false">
+    <variable name="STATE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="EVENT" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD" expression="" defaultValue="EVENT" alwaysStopAt="false" />
+    <context>
+      <option name="DART" value="true" />
+    </context>
+  </template>
+  <template name="bb" value="(b) =&gt; b&#10;    ..&#10;" description="(b) =&gt; b.. for build_value" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="blocprovider" value="BlocProvider.of&lt;$CLASS$&gt;(context)" description="BlocProvider.of&lt;$CLASS$&gt;(context)" toReformat="false" toShortenFQNames="false">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="bvmethods" value="$CLASSNAME$ rebuild(void Function($CLASSNAME$Builder) updates);&#10;$CLASSNAME$Builder toBuilder();" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASSNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_STATEMENT" value="false" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="bvenum" value="class $CLASS_NAME$ extends EnumClass {&#10;&#10;  const $CLASS_NAME$._(String name) : super(name);&#10;&#10;  static BuiltSet&lt;$CLASS_NAME$&gt; get values =&gt; _$$$CLASS_NAME_DECAPITILIZED$Values;&#10;  static $CLASS_NAME$ valueOf(String name) =&gt; _$$$CLASS_NAME_DECAPITILIZED$ValueOf(name);&#10;  static Serializer&lt;$CLASS_NAME$&gt; get serializer =&gt; _$$$CLASS_NAME_DECAPITILIZED$Serializer;&#10;}" description="Dart: generate build_value enum. Use 'bvenumvalue' for create values" toReformat="false" toShortenFQNames="false">
+    <variable name="CLASS_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME_DECAPITILIZED" expression="" defaultValue="decapitalize(CLASS_NAME)" alwaysStopAt="false" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="bvenumvalue" value="static const $CLASS_NAME$ $VALUE_NAME$ = _$$$CLASS_NAME_DECAPITILIZED$$VALUE_NAME_CAPITILIZED$;" description="Dart: generate build_value enum value." toReformat="false" toShortenFQNames="false">
+    <variable name="CLASS_NAME" expression="dartClassName()" defaultValue="" alwaysStopAt="false" />
+    <variable name="VALUE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CLASS_NAME_DECAPITILIZED" expression="" defaultValue="decapitalize(CLASS_NAME)" alwaysStopAt="false" />
+    <variable name="VALUE_NAME_CAPITILIZED" expression="" defaultValue="capitalize(VALUE_NAME)" alwaysStopAt="false" />
+    <context>
+      <option name="DART" value="true" />
+      <option name="DART_STATEMENT" value="false" />
+      <option name="DART_TOPLEVEL" value="false" />
+    </context>
+  </template>
+  <template name="bvimport" value="import 'package:built_collection/built_collection.dart';&#10;import 'package:built_value/built_value.dart';&#10;import 'package:built_value/serializer.dart';" description="Dart: generate build_value imports" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>
